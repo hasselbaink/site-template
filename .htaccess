@@ -1,0 +1,11 @@
+Options +FollowSymLinks
+Options -Indexes
+DirectoryIndex index.php
+
+RewriteEngine ON
+
+RewriteCond %{REQUEST_URI} \.(png|gif|jpeg|jpg|ico)$ [NC]
+RewriteRule ^$ %{HTTP_HOST}%{REQUEST_URI} [L]
+
+RewriteCond %{REQUEST_URI} !\.(php|css|js|htc|png|gif|jpeg|jpg|ico)$
+RewriteRule .* index.php
